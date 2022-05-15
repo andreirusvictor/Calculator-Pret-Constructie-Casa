@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<!-- This is how HTML comments look like -->
+<html>
+<!-- the title will appear on the page-->
+        <head>
+                <title>Formular de calcul constructie casa</title>
+        </head>
+<body>
+
+
+<form action="Proiect FasttrackIT/aplication.py" method="get">
+<!-- If we remove this, every thing will move to the left of the page-->
+        <div align="left">
+                <!--Adds a heading to the form-->
+                <div align="center">
+                        <h1>
+                                Calculator preț construcție casă
+                        </h1>
+                        <hr/>
+                        </p> <h2>
+                        FORMULAR de calcul al costului total (cost construcție casă, teren, avize, autorizații etc)
+                        </h2>
+                </div>
+                        <p></p>
+                        Datorită variației mari de prețuri la materiale și manoperă, prețul rezultat poate diferii semnificativ de <br>
+                        prețul real de cost pentru construcția  unei case. Modificarea constantă a acestor prețuri face aproape <br>
+                        imposibilă actualizarea acestui formular de calcul.
+                <br></br>
+                        Calculul se face în timp real. Poți schimba datele introduse iar calculul se reface automat. Rezultatul calculului se va transmite la <br>
+                        adresa de email dorită. Pentru că sunt foarte multe variabile ce trebuie luate în calculul costului total, rezultatele afișate sunt pur <br>
+                        orientative și au rolul de a vă face o imagine generală despre costurile de construcție ale unei case . Un calcul exact poate fi făcut <br>
+                        doar de o persoană specializată în domeniul construcțiilor (firma de construcții) care va ține cont de detaliile proiectului casei.
+                <br></br>
+                        Pentru calculul cât mai corect al prețului final, bifați toate opțiunile ce urmează. Dacă valorile introduse nu sunt preluate<br>
+                        automat, apăsați Enter, Tab sau faceți click pe următoarea celulă.
+                <br></br>
+
+                Introduceti SUPRAFAȚA TERENULUI (mp):<br>
+                <!-- Input type text for small texts, specify size -->
+                <input type="text" name="SuprafataTeren"  value="">
+                <!--Adds spaces - remove and see what happens -->
+                </br></br>
+
+                Introduceți PREȚUL in €/mp al terenului:<br>
+                <!-- Input type text for small texts, specify size -->
+                <input type="text" name="SuprafataTeren"  value="">
+                <!--Adds spaces - remove and see what happens -->
+                </br></br>
+
+                Introduceți SUPRAFAȚA UTILĂ a casei în mp:<br>
+                <!-- Input type text for small texts, specify size -->
+                <input type="text" name="SuprafataTeren"  value="">
+
+
+                        </p>
+                        Alegeți tipul de casă, cu etaj sau doar parter. Construcția unei case pe parter este mai scumpă decât a uneia cu etaj, raportat la același <br>
+                        număr de mp.
+                        <p>
+                </br></br>
+
+                        </p>
+                        Pentru afișarea corectă a calculului, bifați opțiunile ce urmează
+                        <p>
+        </div>
+        <div align="left">
+                Ce fel de CASĂ doriți? <br>
+                <!-- Radio buttons help you choose one out of the many values -->
+                <input type="radio" name="exe" value=1>Parter și cel puțin un etaj sau mansardă <br>
+                <input type="radio" name="exe" value=2>Parter
+                </br></br>
+
+                Ce nivel de FINISARE alegeți? <br>
+                <!-- Radio buttons help you choose one out of the many values -->
+                <input type="radio" name="finisaj" value=1>Ieftin <br>
+                <input type="radio" name="finisaj" value=2>Mediu <br>
+                <input type="radio" name="finisaj" value=3>Peste Mediu <br>
+                <input type="radio" name="finisaj" value=4>Lux <br>
+                </br></br>
+
+                Alegeți tipul de ARHITECTURĂ a casei: <br>
+                <!-- Radio buttons help you choose one out of the many values -->
+                <input type="radio" name="arhitectura" value=1>Arhitectură simplă <br>
+                <input type="radio" name="arhitectura" value=2>Arhitectură de complexitate medie <br>
+                <input type="radio" name="arhitectura" value=3>Arhitectură complexă <br>
+                </br></br>
+
+                Doriți VERIFICAREA terenului de către un topograf?: <br>
+                <!-- Radio buttons help you choose one out of the many values -->
+                <input type="radio" name="topograf" value=1>Da <br>
+                <input type="radio" name="topograf" value=2>Nu <br>
+                Înainte de a cumpără terenul, apelați la serviciile unui topograf. Este o cheltuiala care merită făcută, pentru a știi exact limitele de <br>
+                 proprietate ale terenului și pentru a evita surprizele neplăcute ce pot apare ulterior.
+                </br></br>
+
+                Doriți VERIFICAREA terenului de către un geolog? <br>
+                 <!-- Radio buttons help you choose one out of the many values -->
+                <input type="radio" name="geolog" value=1>Da <br>
+                <input type="radio" name="geolog" value=2>Nu <br>
+                Înainte de a cumpără terenul, apelați la serviciile unui geolog pentru intocmirea unui AVIZ GEOTEHNIC. <br>
+                Este o cheltuiala care merită făcută, pentru a știi în mare, în ce condiţii se poate construi pe terenul respectiv.
+
+                </br></br>
+                </br></br>
+
+                COMISION agenție imobiliară pentru cumpărarea terenului:  <br>
+                <!-- Radio buttons help you choose one out of the many values -->
+                <input type="radio" name="comision" value=1>Nu plătesc comision <br>
+                <input type="radio" name="comision" value=2>Comision 1% <br>
+                <input type="radio" name="comision" value=3>Comision 1,5% <br>
+                <input type="radio" name="comision" value=4>Comision 2% <br>
+                <input type="radio" name="comision" value=5>Comision 2,5% <br>
+                </br></br>
+
+                        </p> <h3>
+                       COSTUL CASEI
+                        </h3><p>
+                          <hr/>
+
+                Suprafață CONSTRUITĂ a casei va fi (mp):<br>
+                <!-- Input type text for small texts, specify size -->
+                <input type="text" name="SuprafaConstruita"  value="">
+                <!--Adds spaces - remove and see what happens -->
+                </br></br>
+
+                COSTUL TOTAL (CASĂ + TEREN) (€):<br>
+                <!-- Input type text for small texts, specify size -->
+                <input type="text" name="CostTotal"  value="">
+                <!--Adds spaces - remove and see what happens --> <br>
+                Costul total al casei include: costul terenului + costurile de construcție + costul taxelor, avizelor, utilităților etc.
+                </br></br>
+
+
+
+
+                <!--submits the information entered in the form by the user -->
+                <input type=submit value="VEZI DETALII CALCUL">
+        </div>
+</form>
+</body>
+</html>
