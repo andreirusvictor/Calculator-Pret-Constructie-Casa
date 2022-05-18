@@ -1,0 +1,74 @@
+div {
+    width: 70%;
+    height: 100%;
+    padding: 0px;
+    font-size: 20px;
+    font-family: arial;
+    color: black;
+    background-color: #1d2d47;
+}
+
+.a1Class {
+    width: 70%;
+    height: 100%;
+    padding: 0px;
+    font-size: 40px;
+    font-family: arial;
+    color: #ebd281;
+    background-color: #1d2d47;
+    font-weight: bold;
+}
+
+.a2Class {
+    width: 70%;
+    height: 100%;
+    padding: 0px;
+    font-size: 22px;
+    font-family: arial;
+    color: #ebd281;
+    background-color: #1d2d47;
+
+}
+
+.a3Class {
+    width: 70%;
+    height: 100%;
+    padding: 0px;
+    font-size: 20px;
+    font-family: arial;
+    color: white;
+    background-color: #1d2d47;
+}
+
+.a4Class {
+    width: 70%;
+    height: 100%;
+    padding: 0px;
+    font-size: 20px;
+    font-family: arial;
+    color:  #ebd281;
+    background-color: #1d2d47;
+}
+
+.a5Class {
+    width: 70%;
+    height: 100%;
+    padding: 0px;
+    font-size: 20px;
+    font-family: arial;
+    color:  white;
+    background-color: #1d2d47;
+}
+
+.a6Class {
+    width: 70%;
+    height: 100%;
+    padding: 0px;
+    font-size: 15px;
+    font-family: arial;
+    color:  #85d6ff;
+    background-color: #1d2d47;
+}
+
+
+

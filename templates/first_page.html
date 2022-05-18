@@ -1,23 +1,23 @@
 <!DOCTYPE HTML>
-<!-- This is how HTML comments look like -->
-<html>
-<!-- the title will appear on the page-->
-<head>
-        <title>Formular de calcul constructie casa</title>
-        <link rel="stylesheet" href="css/style.css" />
 
-</head>
+<html>
+    <head>
+        <title>
+            Formular de calcul constructie casa
+        </title>
+            <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+
+    </head>
 
 <body style="background-color:#1d2d47;">
-        <form action="Proiect FasttrackIT/aplication.py" method="get">
+        <form action="calculator.py" method="get">
         <div>
                 <table  cellpadding='0' border='0' style="width:65%" align="center">
                     <tr>
                         <td> </td>
                         <td>
                             <div  class="a1Class" align="center">
-                                Calculator preț construcție casă
-                                <hr>
+                                Calculator preț construcție casă                                <hr>
                             </div>
                             <div class="a2Class" align="center">
                                 FORMULAR de calcul al costului total (cost construcție casă, teren, avize, autorizații etc)
@@ -136,7 +136,7 @@
                                 </div>
                                     </br></br>
 
-                                <a href='second page.html'> <input type= button value="VEZI DETALII CALCUL" </a>
+                                <a href='second page.html'> <input type= button value="VEZI DETALII CALCUL"> </a>
 
                             </div>
 
@@ -145,3 +145,5 @@
                     </tr>
                 </table>
         </div>
+        </form>
+</body>
