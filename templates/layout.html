@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <title>
+            Formular de calcul constructie casa
+        </title>
+            <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+
+    </head>
+
+<body style="background-color:#1d2d47;">
+<form action="calculator.py" method="get">
+<div>
+
+                            <div  class="a2Class" align="center">
+                                Calculator preț construcție casă                                <hr>
+                            </div>
+
+</div>
+ {% block content %} {% endblock %}
+</form>
+</body>

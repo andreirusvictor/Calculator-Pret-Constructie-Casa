@@ -1,42 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+<div>
+    <div  class="a2Class" align="left">
+        DETALIERE COSTURI:
+        <hr>
+    </div>
+    <div class="a5Class">
+        </br></br>
+        Valoare COMISION agenție imobiliară cumpărare teren (€):<br>
+    </div>
+        <input type="text" name="input date"  value="" size="20" >
+        </br></br>
 
-<!DOCTYPE HTML>
-<!-- This is how HTML comments look like -->
-<html>
-
-        <head>
-                <title>
-                        DETALIERE COSTURI:
-                </title>
-
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
-
-        </head>
-
-<body style="background-color:#1d2d47;">
-        <form action="Proiect FasttrackIT/aplication.py" method="get">
-        <div>
-                <table  cellpadding='0' border='0' style="width:65%" align="center">
-                    <tr>
-                        <td> </td>
-                        <td>
-                            <div  class="a2Class" align="left">
-                                DETALIERE COSTURI:
-                                <hr>
-                            </div>
-                            <div class="a5Class">
-                                </br></br>
-                                Valoare COMISION agenție imobiliară cumpărare teren (€):<br>
-                            </div>
-                                <input type="text" name="input date"  value="" size="20" >
-                                </br></br>
+    <a href='first_page.html'> <input type= button value="INAPOI"> </a>
+      {% endblock content %}
+</div>
 
 
-                            <a href='first page.html'> <input type= button value="INAPOI"> </a>
-                        </td>
-                        <td> </td>
-                    </tr>
-                </table>
-        </div>
-
-</body>
-</html>

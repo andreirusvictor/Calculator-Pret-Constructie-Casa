@@ -1,149 +1,124 @@
-<!DOCTYPE HTML>
+{% extends "layout.html" %}
+{% block content %}
 
-<html>
-    <head>
-        <title>
-            Formular de calcul constructie casa
-        </title>
-            <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
 
-    </head>
+        <div >
+            <div class="a2Class" align="center">
+                FORMULAR de calcul al costului total (cost construcție casă, teren, avize, autorizații etc)
+            </div>
+            <br>
+            <div class="a4Class" >
+                Datorită variației mari de prețuri la materiale și manoperă, prețul rezultat poate diferii semnificativ de
+                prețul real de cost pentru construcția  unei case. Modificarea constantă a acestor prețuri face aproape
+                imposibilă actualizarea acestui formular de calcul.
+            </div>
+            <div class="a3Class">
+                Calculul se face în timp real. Poți schimba datele introduse iar calculul se reface automat. Rezultatul calculului se va transmite la
+                adresa de email dorită. Pentru că sunt foarte multe variabile ce trebuie luate în calculul costului total, rezultatele afișate sunt pur
+                orientative și au rolul de a vă face o imagine generală despre costurile de construcție ale unei case . Un calcul exact poate fi făcut
+                doar de o persoană specializată în domeniul construcțiilor (firma de construcții) care va ține cont de detaliile proiectului casei.
+            </div>
 
-<body style="background-color:#1d2d47;">
-        <form action="calculator.py" method="get">
-        <div>
-                <table  cellpadding='0' border='0' style="width:65%" align="center">
-                    <tr>
-                        <td> </td>
-                        <td>
-                            <div  class="a1Class" align="center">
-                                Calculator preț construcție casă                                <hr>
-                            </div>
-                            <div class="a2Class" align="center">
-                                FORMULAR de calcul al costului total (cost construcție casă, teren, avize, autorizații etc)
-                            </div>
-                            <br>
-                            <div class="a4Class" >
-                                Datorită variației mari de prețuri la materiale și manoperă, prețul rezultat poate diferii semnificativ de
-                                prețul real de cost pentru construcția  unei case. Modificarea constantă a acestor prețuri face aproape
-                                imposibilă actualizarea acestui formular de calcul.
-                            </div>
-                            <div class="a3Class">
-                                Calculul se face în timp real. Poți schimba datele introduse iar calculul se reface automat. Rezultatul calculului se va transmite la
-                                adresa de email dorită. Pentru că sunt foarte multe variabile ce trebuie luate în calculul costului total, rezultatele afișate sunt pur
-                                orientative și au rolul de a vă face o imagine generală despre costurile de construcție ale unei case . Un calcul exact poate fi făcut
-                                doar de o persoană specializată în domeniul construcțiilor (firma de construcții) care va ține cont de detaliile proiectului casei.
-                            </div>
 
-                        </td>
-                        <td> </td>
-                    </tr>
-                    <tr >
-                        <td> </td>
-                        <td>
-                            <div class="a5Class">
-                                Pentru calculul cât mai corect al prețului final, bifați toate opțiunile ce urmează. Dacă valorile introduse nu sunt preluate
-                                automat, apăsați Enter, Tab sau faceți click pe următoarea celulă.
-                            </div>
-                            <div class="a5Class">
-                                </br></br>
-                                Introduceti SUPRAFAȚA TERENULUI (mp):<br>
-                            </div>
-                                <input type="text" name="SuprafataTeren"  value="" size="20" >
-                                </br></br>
-                            <div class="a5Class">
-                                Introduceți PREȚUL in €/mp al terenului:<br>
-                            </div>
-                                <input type="text" name="PretTeren"  value="" size="20" >
-                                </br></br>
-                            <div class="a5Class">
-                                Introduceți SUPRAFAȚA UTILĂ a casei în mp:<br>
-                            </div>
-                                <input type="text" name="SuprafataTeren"  value="" size="20" >
-                            <div class="a6Class">
-                                Pentru calculul costurilor, este importantă suprafața construită, care este mai mare decât suprafața utilă.
-                            </div>
-                            </br></br>
-                             <div class="a5Class">
-                                Alegeți tipul de casă, cu etaj sau doar parter. Construcția unei case pe parter este mai scumpă decât a uneia cu etaj, raportat la același <br>
-                                număr de mp.
-                             </div>
-                             </br></br>
 
-                            <div class="a5Class">
-                                Pentru afișarea corectă a calculului, bifați opțiunile ce urmează
-                            </div>
-                            <div class="a5Class">
-                                        Ce fel de CASĂ doriți? <br>
-                                <input type="radio" name="exe" value=1>Parter și cel puțin un etaj sau mansardă <br>
-                                <input type="radio" name="exe" value=2>Parter
-                                </br></br>
+            <div class="a5Class">
+                Pentru calculul cât mai corect al prețului final, bifați toate opțiunile ce urmează. Dacă valorile introduse nu sunt preluate
+                automat, apăsați Enter, Tab sau faceți click pe următoarea celulă.
+            </div>
+            <div class="a5Class">
+                </br></br>
+                Introduceti SUPRAFAȚA TERENULUI (mp):<br>
+            </div>
+                <input type="text" name="SuprafataTeren"  value="" size="20" >
+                </br></br>
+            <div class="a5Class">
+                Introduceți PREȚUL in €/mp al terenului:<br>
+            </div>
+                <input type="text" name="PretTeren"  value="" size="20" >
+                </br></br>
+            <div class="a5Class">
+                Introduceți SUPRAFAȚA UTILĂ a casei în mp:<br>
+            </div>
+                <input type="text" name="SuprafataTeren"  value="" size="20" >
+            <div class="a6Class">
+                Pentru calculul costurilor, este importantă suprafața construită, care este mai mare decât suprafața utilă.
+            </div>
+            </br></br>
+             <div class="a5Class">
+                Alegeți tipul de casă, cu etaj sau doar parter. Construcția unei case pe parter este mai scumpă decât a uneia cu etaj, raportat la același <br>
+                număr de mp.
+             </div>
+             </br></br>
 
-                                Ce nivel de FINISARE alegeți? <br>
-                                <input type="radio" name="finisaj" value=1>Ieftin <br>
-                                <input type="radio" name="finisaj" value=2>Mediu <br>
-                                <input type="radio" name="finisaj" value=3>Peste Mediu <br>
-                                <input type="radio" name="finisaj" value=4>Lux <br>
-                                </br></br>
+            <div class="a5Class">
+                Pentru afișarea corectă a calculului, bifați opțiunile ce urmează
+            </div>
+            <div class="a5Class">
+                        Ce fel de CASĂ doriți? <br>
+                <input type="radio" name="exe" value=1>Parter și cel puțin un etaj sau mansardă <br>
+                <input type="radio" name="exe" value=2>Parter
+                </br></br>
 
-                                Alegeți tipul de ARHITECTURĂ a casei: <br>
-                                <input type="radio" name="arhitectura" value=1>Arhitectură simplă <br>
-                                <input type="radio" name="arhitectura" value=2>Arhitectură de complexitate medie <br>
-                                <input type="radio" name="arhitectura" value=3>Arhitectură complexă <br>
-                                </br></br>
+                Ce nivel de FINISARE alegeți? <br>
+                <input type="radio" name="finisaj" value=1>Ieftin <br>
+                <input type="radio" name="finisaj" value=2>Mediu <br>
+                <input type="radio" name="finisaj" value=3>Peste Mediu <br>
+                <input type="radio" name="finisaj" value=4>Lux <br>
+                </br></br>
 
-                                Doriți VERIFICAREA terenului de către un topograf?: <br>
+                Alegeți tipul de ARHITECTURĂ a casei: <br>
+                <input type="radio" name="arhitectura" value=1>Arhitectură simplă <br>
+                <input type="radio" name="arhitectura" value=2>Arhitectură de complexitate medie <br>
+                <input type="radio" name="arhitectura" value=3>Arhitectură complexă <br>
+                </br></br>
 
-                                <input type="radio" name="topograf" value=1>Da <br>
-                                <input type="radio" name="topograf" value=2>Nu <br>
-                            </div>
-                            <div class="a6Class">
-                                 Înainte de a cumpără terenul, apelați la serviciile unui topograf. Este o cheltuiala care merită făcută, pentru a știi exact limitele de
-                                proprietate ale terenului și pentru a evita surprizele neplăcute ce pot apare ulterior.
-                            </div>
-                            </br></br>
-                            <div class="a5Class">
-                                Doriți VERIFICAREA terenului de către un geolog? <br>
-                                <input type="radio" name="geolog" value=1>Da <br>
-                                <input type="radio" name="geolog" value=2>Nu <br>
-                            </div>
-                            <div class="a6Class">
-                                Înainte de a cumpără terenul, apelați la serviciile unui geolog pentru intocmirea unui AVIZ GEOTEHNIC.
-                                Este o cheltuiala care merită făcută, pentru a știi în mare, în ce condiţii se poate construi pe terenul respectiv.
-                            </div>
-                            </br></br>
-                            <div class="a5Class">
-                               COMISION agenție imobiliară pentru cumpărarea terenului:  <br>
-                                    <input type="radio" name="comision" value=1>Nu plătesc comision <br>
-                                    <input type="radio" name="comision" value=2>Comision 1% <br>
-                                    <input type="radio" name="comision" value=3>Comision 1,5% <br>
-                                    <input type="radio" name="comision" value=4>Comision 2% <br>
-                                    <input type="radio" name="comision" value=5>Comision 2,5% <br>
-                                    </br></br>
-                            </div>
-                            <div class="a5Class">
-                                COSTUL CASEI
-                                <hr/>
-                                    Suprafață CONSTRUITĂ a casei va fi (mp):<br>
-                                    <input type="text" name="SuprafaConstruita"  value="">
-                                    </br></br>
+                Doriți VERIFICAREA terenului de către un topograf?: <br>
 
-                                    COSTUL TOTAL (CASĂ + TEREN) (€):<br>
-                                    <input type="text" name="CostTotal"  value="">
-                                    <br>
-                                <div class="a6Class">
-                                    Costul total al casei include: costul terenului + costurile de construcție + costul taxelor, avizelor, utilităților etc.
-                                </div>
-                                    </br></br>
+                <input type="radio" name="topograf" value=1>Da <br>
+                <input type="radio" name="topograf" value=2>Nu <br>
+            </div>
+            <div class="a6Class">
+                 Înainte de a cumpără terenul, apelați la serviciile unui topograf. Este o cheltuiala care merită făcută, pentru a știi exact limitele de
+                proprietate ale terenului și pentru a evita surprizele neplăcute ce pot apare ulterior.
+            </div>
+            </br></br>
+            <div class="a5Class">
+                Doriți VERIFICAREA terenului de către un geolog? <br>
+                <input type="radio" name="geolog" value=1>Da <br>
+                <input type="radio" name="geolog" value=2>Nu <br>
+            </div>
+            <div class="a6Class">
+                Înainte de a cumpără terenul, apelați la serviciile unui geolog pentru intocmirea unui AVIZ GEOTEHNIC.
+                Este o cheltuiala care merită făcută, pentru a știi în mare, în ce condiţii se poate construi pe terenul respectiv.
+            </div>
+            </br></br>
+            <div class="a5Class">
+               COMISION agenție imobiliară pentru cumpărarea terenului:  <br>
+                    <input type="radio" name="comision" value=1>Nu plătesc comision <br>
+                    <input type="radio" name="comision" value=2>Comision 1% <br>
+                    <input type="radio" name="comision" value=3>Comision 1,5% <br>
+                    <input type="radio" name="comision" value=4>Comision 2% <br>
+                    <input type="radio" name="comision" value=5>Comision 2,5% <br>
+                    </br></br>
+            </div>
+            <div class="a5Class">
+                COSTUL CASEI
+                <hr/>
+                    Suprafață CONSTRUITĂ a casei va fi (mp):<br>
+                    <input type="text" name="SuprafaConstruita"  value="">
+                    </br></br>
 
-                                <a href='second page.html'> <input type= button value="VEZI DETALII CALCUL"> </a>
+                    COSTUL TOTAL (CASĂ + TEREN) (€):<br>
+                    <input type="text" name="CostTotal"  value="">
+                    <br>
+                <div class="a6Class">
+                    Costul total al casei include: costul terenului + costurile de construcție + costul taxelor, avizelor, utilităților etc.
+                </div>
+                    </br></br>
 
-                            </div>
+                <a href='second_page.html'> <input type= button value="VEZI DETALII CALCUL"> </a>
+                {% endblock content %}
 
-                       </td>
-                        <td> </td>
-                    </tr>
-                </table>
+            </div>
         </div>
-        </form>
-</body>
+
