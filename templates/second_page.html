@@ -6,12 +6,14 @@
         <hr>
     </div>
     <div class="a5Class">
-        </br></br>
-        Valoare COMISION agenție imobiliară cumpărare teren (€):<br>
-    </div>
-        <input type="text" name="input date"  value="" size="20" >
-        </br></br>
 
+{#    Parcurgem toate costurile primite din functia second_page(), afisandu-le #}
+    {% for valoare in valori %}
+        <div class="a5Class">
+            <b>{{ valoare.descriere }}</b>: {{ valoare.valoare }}
+        </div>
+    {% endfor %}
+    </div>
     <a href='first_page.html'> <input type= button value="INAPOI"> </a>
       {% endblock content %}
 </div>
