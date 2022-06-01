@@ -15,26 +15,15 @@
                 imposibilă actualizarea acestui formular de calcul.
             </div>
             <div class="a3Class">
-                Calculul se face în timp real. Poți schimba datele introduse iar calculul se reface automat. Rezultatul
-                calculului se va transmite la
-                adresa de email dorită. Pentru că sunt foarte multe variabile ce trebuie luate în calculul costului
-                total,
-                rezultatele afișate sunt pur
-                orientative și au rolul de a vă face o imagine generală despre costurile de construcție ale unei case .
-                Un
-                calcul exact poate fi făcut
-                doar de o persoană specializată în domeniul construcțiilor (firma de construcții) care va ține cont de
-                detaliile
-                proiectului casei.
+                Calculul se face după completarea tuturor câmpurilor care sunt obligatorii.  Rezultatul
+                calculului se va afișa detaliat după apăsarea butonului "Calculează" . Pentru că sunt foarte multe variabile ce trebuie luate în calculul costului total,
+                rezultatele afișate sunt pur orientative și au rolul de a vă face o imagine generală despre costurile de construcție ale unei case . Un calcul exact poate fi făcut
+                doar de o persoană specializată în domeniul construcțiilor (firma de construcții) care va ține cont de detaliile proiectului casei.
             </div>
 
 
             <div class="a5Class">
-                Pentru calculul cât mai corect al prețului final, bifați toate opțiunile ce urmează. Dacă valorile
-                introduse
-                nu
-                sunt preluate
-                automat, apăsați Enter, Tab sau faceți click pe următoarea celulă.
+                Pentru calculul cât mai corect al prețului final, bifați toate opțiunile ce urmează.
             </div>
             <div class="a5Class">
                 </br></br>
@@ -42,17 +31,17 @@
             </div>
 
 
-            <input required type="number" name="suprafata_teren" value="" size="20">
+            <input required type="number" min="100"  name="suprafata_teren"  value=""  size="20" >
             </br></br>
             <div class="a5Class">
                 Introduceți PREȚUL in €/mp al terenului:<br>
             </div>
-            <input required type="number" name="pret_teren" value="" size="20">
+            <input required type="number" min="1"  name="pret_teren" value="" size="20">
             </br></br>
             <div class="a5Class">
                 Introduceți SUPRAFAȚA UTILĂ a casei în mp:<br>
             </div>
-            <input required type="number" name="suprafata_casa" value="" size="20">
+            <input required type="number" min="20"  name="suprafata_casa" value="" size="20">
             <div class="a6Class">
                 Pentru calculul costurilor, este importantă suprafața construită, care este mai mare decât suprafața
                 utilă.
@@ -178,24 +167,6 @@
     </form>
 
 
-    {##}
-    {#    <div class="a5Class">#}
-    {#    COSTUL CASEI#}
-    {#    <hr/>#}
-    {#    Suprafață CONSTRUITĂ a casei va fi (mp):<br>#}
-    {#    <input type="text" name="SuprafaConstruita" value="">#}
-    {#    </br></br>#}
-    {##}
-    {#    COSTUL TOTAL (CASĂ + TEREN) (€):<br>#}
-    {#    <input type="text" name="CostTotal" value="">#}
-    {#    <br>#}
-    {#    <div class="a6Class">#}
-    {#        Costul total al casei include: costul terenului + costurile de construcție + costul taxelor, avizelor,#}
-    {#        utilităților etc.#}
-    {#    </div>#}
-    {#    </br></br>#}
-    {##}
-    {##}
-    {#    <a href='second_page.html'> <input type=button value="VEZI DETALII CALCUL"> </a>#}
+
 {% endblock content %}
 

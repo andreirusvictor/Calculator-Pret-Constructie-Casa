@@ -5,7 +5,7 @@ import psycopg2
 app = Flask('calculator')
 
 
-# Ia din baza de date toate intrariile din tabela pentru tabela specificata
+# Ia din baza de date toate intrarile din tabela pentru tabela specificata
 def select(cursor, tabela):
     cursor.execute(f'SELECT * FROM {tabela};')
 
@@ -59,10 +59,10 @@ def costuri():
 
     cost_notar = cost_tr / 100
 
-    cost_total = cost_tr + pr_arh + casa_cheie + cu_avz + st_geo + topo + ac + ut_curent + ut_gaz + ut_ac + st_topo + cost_notar + geo
+    cost_total = cost_tr + pr_arh + casa_cheie + cu_avz + st_geo + topo + ac + ut_curent + ut_gaz + val_ag + ut_ac + st_topo + cost_notar + geo
 
     return [
-        dict(descriere="Suprafata construita", valoare=sc),
+
         dict(descriere="Cost teren", valoare=cost_tr),
         dict(descriere="Cost proiect arhitectura", valoare=pr_arh),
         dict(descriere="Cost construire casa la rosu", valoare=casa_rosu),
@@ -114,7 +114,7 @@ def first_page():
 @app.route('/second_page/', methods=('POST',))
 def second_page():
 
-    # Functia costuri returneaza o lista cu toate costurile necesare construite casei,
+    # Functia costuri returneaza o lista cu toate costurile necesare construirii casei,
     # in forma (descriere="Tipul costului", valoare="Valoarea costului". Trimitem aceasta lista
     # template-ului, pentru a le afisa.
     return render_template(
