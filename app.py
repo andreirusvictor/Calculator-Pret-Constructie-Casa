@@ -18,7 +18,7 @@ def select(cursor, tabela):
     rezultat = list()
     for row in rows:
         rezultat.append(
-            dict( descriere=row[1], valoare=row[2])
+            {'descriere': row[1], 'valoare': row[2]}
         )
 
     return rezultat
