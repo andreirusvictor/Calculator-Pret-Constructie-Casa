@@ -6,18 +6,19 @@ app = Flask('calculator')
 
 
 # Ia din baza de date toate intrarile din tabela pentru tabela specificata
+# fetchall returneaza o lista de intrari, de exemplu pentru tabela (ID, DESCRIERE, VALOARE)
+# returneaza (1, 'Arhitectura simpla', 200), asa ca le convertim la un dictionar
+# pentru a intelege ce inseamna fiecare valoare
+
+
 def select(cursor, tabela):
     cursor.execute(f'SELECT * FROM {tabela};')
-
-    # fetchall returneaza o lista de intrari, de exemplu pentru tabela (ID, DESCRIERE, VALOARE)
-    # returneaza (1, 'Arhitectura simpla', 200), asa ca le convertim la un dictionar
-    # pentru a intelege ce inseamna fiecare valoare
     rows = cursor.fetchall()
 
     rezultat = list()
     for row in rows:
         rezultat.append(
-            dict(id=row[0], descriere=row[1], valoare=row[2])
+            dict( descriere=row[1], valoare=row[2])
         )
 
     return rezultat
