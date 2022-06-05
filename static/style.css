@@ -1,27 +1,28 @@
 div {
-    width: 70%;
-    height: 100%;
-    padding: 0px;
-    font-size: 20px;
-    font-family: arial;
-    color: black;
-    background-color: #1d2d47;
+  max-width: 1000px;
+  margin: auto;
+  padding: 15px;
+  font-size: 20px;
+  font-family: arial;
+  color: black;
+  background-color: #1d2d47;
+  opacity: 0.9;
 }
 
 
 .a1Class {
-    width: 70%;
+    width: 100%;
     height: 100%;
-    padding: 0px;
-    font-size: 22px;
+    padding: 4px;
+    font-size: 28px;
     font-family: arial;
     color: #ebd281;
-    background-color: #1d2d47;
+    background-color: black;
     font-weight: bold;
 }
 
 .a2Class {
-    width: 70%;
+    width: 100%;
     height: 100%;
     padding: 0px;
     font-size: 22px;
@@ -32,7 +33,7 @@ div {
 }
 
 .a3Class {
-    width: 70%;
+    width: 100%;
     height: 100%;
     padding: 0px;
     font-size: 20px;
@@ -42,7 +43,7 @@ div {
 }
 
 .a4Class {
-    width: 70%;
+    width: 100%;
     height: 100%;
     padding: 0px;
     font-size: 20px;
@@ -52,17 +53,18 @@ div {
 }
 
 .a5Class {
-    width: 70%;
+    width: 100%;
     height: 100%;
     padding: 0px;
     font-size: 20px;
     font-family: arial;
     color:  white;
     background-color: #1d2d47;
+    font-weight: bold;
 }
 
 .a6Class {
-    width: 70%;
+    width: 100%;
     height: 100%;
     padding: 0px;
     font-size: 15px;
@@ -71,5 +73,43 @@ div {
     background-color: #1d2d47;
 }
 
+.a7Class {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    font-size: 20px;
+    font-family: arial;
+    color:  white;
+    background-color: #1d2d47;
+    font-weight: normal;
+}
 
+.button {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 3px #555;
+  font-weight: bold;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 5 5px #666;
+  transform: translateY(0px);
+
+
+.radioLeft {
+  display: block;
+  text-align: left;
+}
 

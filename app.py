@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request
 import psycopg2
 
-
 app = Flask('calculator')
 
 
@@ -23,6 +22,7 @@ def select(cursor, tabela):
 
     return rezultat
 
+
 # aducem valorile completate in campurile formularului si le pasam variabilelor definite pentru efectuarea calculelor:
 def costuri():
     st = int(request.form.get('suprafata_teren'))
@@ -39,14 +39,14 @@ def costuri():
     sc = su * 1.2
     cost_tr = st * tmp
     pr_arh = sc * arh
-    casa_rosu = sc * arh + reg_h
+    casa_rosu = (sc * arh) * 10 + reg_h
     casa_cheie = sc * (arh + reg_h + fin)
 
     cu_avz = 400
     st_geo = 200
     topo = 400
 
-    ac = casa_cheie * 0.05
+    ac = casa_cheie * 0.005
 
     ut_curent = 1200
     ut_gaz = 1200
@@ -60,29 +60,30 @@ def costuri():
 
     cost_notar = cost_tr / 100
 
-    cost_total = cost_tr + pr_arh + casa_cheie + cu_avz + st_geo + topo + ac + ut_curent + ut_gaz + val_ag + ut_ac + st_topo + cost_notar + geo
+    cost_total = cost_tr + pr_arh + casa_cheie + cu_avz + st_geo + topo + ac + ut_curent + ut_gaz + val_ag +\
+                 ut_ac + st_topo + cost_notar + geo
 
     return [
 
         dict(descriere="Cost teren", valoare=cost_tr),
-        dict(descriere="Cost proiect arhitectura", valoare=pr_arh),
-        dict(descriere="Cost construire casa la rosu", valoare=casa_rosu),
-        dict(descriere="Cost construire casa la cheie", valoare=casa_cheie),
+        dict(descriere="Cost proiect arhitectură", valoare=pr_arh),
+        dict(descriere="Cost construire casă la roșu", valoare=casa_rosu),
+        dict(descriere="Cost construire casă la cheie", valoare=casa_cheie),
         dict(descriere="Cost certificat urbanism + avize", valoare=cu_avz),
-        dict(descriere="Cost studio geotehnic", valoare=st_geo),
-        dict(descriere="Cost ridicare topografica", valoare=topo),
-        dict(descriere="Cost autorizatie de constructie", valoare=ac),
-        dict(descriere="Cost utilitati curent", valoare=ut_curent),
-        dict(descriere="Cost utilitati gaz", valoare=ut_gaz),
-        dict(descriere="Cost utilitati apa/canal", valoare=ut_ac),
-        dict(descriere="Cost instalatii electrice", valoare=cost_ie),
-        dict(descriere="Cost instalatii sanitare", valoare=cost_is),
-        dict(descriere="Cost instalatii termice", valoare=cost_it),
-        dict(descriere="Valoare comision agentie", valoare=val_ag),
+        dict(descriere="Cost studiu geotehnic", valoare=st_geo),
+        dict(descriere="Cost ridicare topografică", valoare=topo),
+        dict(descriere="Cost autorizație de construcție", valoare=ac),
+        dict(descriere="Cost utilități curent", valoare=ut_curent),
+        dict(descriere="Cost utilități gaz", valoare=ut_gaz),
+        dict(descriere="Cost utilități apă/canal", valoare=ut_ac),
+        dict(descriere="Cost instalații electrice", valoare=cost_ie),
+        dict(descriere="Cost instalații sanitare", valoare=cost_is),
+        dict(descriere="Cost instalații termice", valoare=cost_it),
+        dict(descriere="Valoare comision agenție", valoare=val_ag),
         dict(descriere="Cost topograf verificare teren", valoare=st_topo),
-        dict(descriere="Cost notariale cumparare teren", valoare=cost_notar),
+        dict(descriere="Costuri notariale cumpărare teren", valoare=cost_notar),
         dict(descriere="Cost aviz geotehnic preliminar", valoare=geo),
-        dict(descriere="Cost total", valoare=cost_total),
+        dict(descriere="COST TOTAL", valoare=cost_total),
     ]
 
 
@@ -114,7 +115,6 @@ def first_page():
 
 @app.route('/second_page/', methods=('POST',))
 def second_page():
-
     # Functia costuri returneaza o lista cu toate costurile necesare construirii casei,
     # in forma (descriere="Tipul costului", valoare="Valoarea costului". Trimitem aceasta lista
     # template-ului, pentru a le afisa.

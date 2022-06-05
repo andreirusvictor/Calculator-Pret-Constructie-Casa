@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
+
 <div>
     <div  class="a2Class" align="left">
         DETALIERE COSTURI:
@@ -11,11 +12,14 @@
     {% for valoare in valori %}
         <div class="a5Class">
             <b class="a4Class">{{ valoare.descriere }}</b>: {{ valoare.valoare }} €
+            <br><br>
         </div>
     {% endfor %}
     </div>
-    <a href='first_page.html'> <input type= button value="INAPOI"> </a>
-      {% endblock content %}
-</div>
+    <a href='first_page.html'> <input type= button  class="button" value="<< INAPOI"> </a>
+
+    <div>
+{% endblock content %}
+
 
 

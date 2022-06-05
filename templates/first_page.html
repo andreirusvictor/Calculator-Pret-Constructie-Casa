@@ -3,167 +3,179 @@
 
 
     <form method="post" action="/second_page/">
-        <div>
+        <div   align="center">
             <div class="a2Class" align="center">
                 FORMULAR de calcul al costului total (cost construcție casă, teren, avize, autorizații etc)
             </div>
             <br>
-            <div class="a4Class">
-                Datorită variației mari de prețuri la materiale și manoperă, prețul rezultat poate diferii semnificativ
-                de
-                prețul real de cost pentru construcția unei case. Modificarea constantă a acestor prețuri face aproape
-                imposibilă actualizarea acestui formular de calcul.
-            </div>
-            <div class="a3Class">
-                Calculul se face după completarea tuturor câmpurilor care sunt obligatorii.  Rezultatul
-                calculului se va afișa detaliat după apăsarea butonului "Calculează" . Pentru că sunt foarte multe variabile ce trebuie luate în calculul costului total,
-                rezultatele afișate sunt pur orientative și au rolul de a vă face o imagine generală despre costurile de construcție ale unei case . Un calcul exact poate fi făcut
-                doar de o persoană specializată în domeniul construcțiilor (firma de construcții) care va ține cont de detaliile proiectului casei.
-            </div>
+            <div align="left">
+                    <div class="a4Class" align="left">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        Datorită variației mari de prețuri la materiale și manoperă, prețul rezultat poate diferii semnificativ
+                        de prețul real de cost pentru construcția unei case. Modificarea constantă a acestor prețuri face aproape
+                        imposibilă actualizarea acestui formular de calcul.
+                    </div>
+                    <br>
+                    <div class="a3Class" align="left">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        Calculul se face după completarea tuturor câmpurilor care sunt obligatorii.  Rezultatul
+                        calculului se va afișa detaliat după apăsarea butonului "Calculează". Pentru că sunt foarte multe variabile ce trebuie luate în calculul costului total,
+                        rezultatele afișate sunt pur orientative și au rolul de a vă face o imagine generală despre costurile de construcție ale unei case. Un calcul exact poate fi făcut
+                        doar de o persoană specializată în domeniul construcțiilor (firma de construcții) care va ține cont de detaliile proiectului casei.
+                    </div>
 
 
-            <div class="a5Class">
-                Pentru calculul cât mai corect al prețului final, bifați toate opțiunile ce urmează.
-            </div>
-            <div class="a5Class">
-                </br></br>
-                Introduceti SUPRAFAȚA TERENULUI (mp):<br>
-            </div>
+                    <div class="a7Class" align="left">
+                        &nbsp;<br>&nbsp;&nbsp;
+                        Pentru calculul cât mai corect al prețului final, bifați toate opțiunile ce urmează:
+                    </div>
+                    <div class="a5Class">
+                        <br>
+                        Introduceti SUPRAFAȚA TERENULUI (mp):<br>
+                    </div>
 
 
-            <input required type="number" min="100"  name="suprafata_teren"  value=""  size="20" >
-            </br></br>
-            <div class="a5Class">
-                Introduceți PREȚUL in €/mp al terenului:<br>
-            </div>
-            <input required type="number" min="1"  name="pret_teren" value="" size="20">
-            </br></br>
-            <div class="a5Class">
-                Introduceți SUPRAFAȚA UTILĂ a casei în mp:<br>
-            </div>
-            <input required type="number" min="20"  name="suprafata_casa" value="" size="20">
-            <div class="a6Class">
-                Pentru calculul costurilor, este importantă suprafața construită, care este mai mare decât suprafața
-                utilă.
-            </div>
-            </br></br>
-            <div class="a5Class">
-                Alegeți tipul de casă, cu etaj sau doar parter. Construcția unei case pe parter este mai scumpă decât a
-                uneia cu
-                etaj, raportat la același <br>
-                număr de mp.
-            </div>
-            </br></br>
+                    <input required type="number" min="100"  name="suprafata_teren"  value=""  size="20" >
+                    <br><br>
+                    <div class="a5Class">
+                        Introduceți PREȚUL in €/mp al terenului:<br>
+                    </div>
+                    <input  required type="number" min="1"  name="pret_teren" value="" size="20">
+                    <br><br>
+                    <div class="a5Class">
+                        Introduceți SUPRAFAȚA UTILĂ a casei în mp:<br>
+                    </div>
+                    <input required type="number" min="20"  name="suprafata_casa" value="" size="20">
+                    <div class="a6Class">
+                        Pentru calculul costurilor, este importantă suprafața construită, care este mai mare decât suprafața
+                        utilă.
+                    </div>
+                    <br>
+                    <div class="a7Class">
+                        Alegeți tipul de casă, cu etaj sau doar parter. Construcția unei case pe parter este mai scumpă decât a
+                        uneia cu
+                        etaj, raportat la același <br>
+                        număr de mp.
+                    </div>
+                    <br>
 
-            <div class="a5Class">
-                Pentru afișarea corectă a calculului, bifați opțiunile ce urmează
-            </div>
+                    <div class="a7Class">
+                        Pentru afișarea corectă a calculului, bifați opțiunile ce urmează:
+                        <br><br>
+                    </div>
 
-            <div class="a5Class">
-                Ce fel de CASĂ doriți?
-                <br>
-                <div>
-{# Parcurgem lista regimuri_inaltime, si cream un input pentru fiecare intrare          #}
-                    {% for regim_inaltime in regimuri_inaltime %}
-                        <div class="a5Class">
-                            <input required type="radio" value={{ regim_inaltime.valoare }}
-                                    name="regim_inaltime"/>
-                            <label>{{ regim_inaltime.descriere }}</label>
+                    <div class="a5Class">
+                        Ce fel de CASĂ doriți?
+                        <br>
+                        <div>
+        {# Parcurgem lista regimuri_inaltime, si cream un input pentru fiecare intrare          #}
+                            {% for regim_inaltime in regimuri_inaltime %}
+                                <div class="a7Class">
+                                    <input required type="radio" value={{ regim_inaltime.valoare }}
+                                            name="regim_inaltime"/>
+                                    <label>{{ regim_inaltime.descriere }}</label>
+                                </div>
+                            {% endfor %}
+                            <br>
                         </div>
-                    {% endfor %}
-                </div>
-            </div>
+                    </div>
 
-            <div class="a5Class">
-                Ce nivel de FINISARE alegeți?
-                <br>
-                <div>
-                    {% for nivel_finisare in niveluri_finisare %}
-                        <div class="a5Class">
-                            <input required type="radio" value={{ nivel_finisare.valoare }}
-                                    name="nivel_finisare"/>
-                            <label>{{ nivel_finisare.descriere }}</label>
+                    <div class="a5Class">
+                        Ce nivel de FINISARE alegeți?
+                        <br>
+                        <div>
+                            {% for nivel_finisare in niveluri_finisare %}
+                                <div class="a7Class">
+                                    <input required type="radio" value={{ nivel_finisare.valoare }}
+                                            name="nivel_finisare"/>
+                                    <label>{{ nivel_finisare.descriere }}</label>
+                                </div>
+                            {% endfor %}
+                            <br>
                         </div>
-                    {% endfor %}
-                </div>
-            </div>
+                    </div>
 
-            <div class="a5Class">
-                Alegeți tipul de ARHITECTURĂ a casei:
-                <br>
-                <div>
-                    {% for arhitectura in niveluri_arhitectura %}
-                        <div class="a5Class">
-                            <input required type="radio" value={{ arhitectura.valoare }}
-                                   name="arhitectura"/>
-                            <label>{{ arhitectura.descriere }}</label>
+                    <div class="a5Class">
+                        Alegeți tipul de ARHITECTURĂ a casei:
+                        <br>
+                        <div>
+                            {% for arhitectura in niveluri_arhitectura %}
+                                <div class="a7Class">
+                                    <input required type="radio" value={{ arhitectura.valoare }}
+                                           name="arhitectura"/>
+                                    <label>{{ arhitectura.descriere }}</label>
+                                </div>
+                            {% endfor %}
+                            <br>
                         </div>
-                    {% endfor %}
-                </div>
-            </div>
+                    </div>
 
-            <div class="a5Class">
-                Doriți VERIFICAREA terenului de către un topograf?:
-                <br>
-                <div>
-                    {% for verificare in verificare_topografica %}
-                        <div class="a5Class">
-                            <input required type="radio" value={{ verificare.valoare }}
-                                   name="verificare_topografica"/>
-                            <label>{{ verificare.descriere }}</label>
+                    <div class="a5Class">
+                        Doriți VERIFICAREA terenului de către un topograf?:
+                        <br>
+                        <div>
+                            {% for verificare in verificare_topografica %}
+                                <div class="a7Class">
+                                    <input required type="radio" value={{ verificare.valoare }}
+                                           name="verificare_topografica"/>
+                                    <label>{{ verificare.descriere }}</label>
+                                </div>
+                            {% endfor %}
                         </div>
-                    {% endfor %}
-                </div>
 
-                <div class="a6Class">
-                    Înainte de a cumpără terenul, apelați la serviciile unui topograf. Este o cheltuiala care merită
-                    făcută,
-                    pentru a știi exact limitele de
-                    proprietate ale terenului și pentru a evita surprizele neplăcute ce pot apare ulterior.
-                </div>
-            </div>
-
-            <div class="a5Class">
-                Doriți VERIFICAREA terenului de către un geolog?:
-                <br>
-                <div>
-                    {% for verificare in verificare_geologica %}
-                        <div class="a5Class">
-                            <input required type="radio" value={{ verificare.valoare }}
-                                   name="verificare_geologica"/>
-                            <label>{{ verificare.descriere }}</label>
+                        <div class="a6Class">
+                            Înainte de a cumpără terenul, apelați la serviciile unui topograf. Este o cheltuiala care merită
+                            făcută,
+                            pentru a știi exact limitele de
+                            proprietate ale terenului și pentru a evita surprizele neplăcute ce pot apare ulterior.
                         </div>
-                    {% endfor %}
-                </div>
+                        <br>
+                    </div>
 
-                <div class="a6Class">
-                    Înainte de a cumpără terenul, apelați la serviciile unui geolog pentru intocmirea unui AVIZ
-                    GEOTEHNIC.
-                    Este o cheltuiala care merită făcută, pentru a știi în mare, în ce condiţii se poate construi pe
-                    terenul
-                    respectiv.
-                </div>
-            </div>
-
-            </br>
-
-            <div class="a5Class">
-                COMISION agenție imobiliară pentru cumpărarea terenului:
-                <br>
-                <div>
-                    {% for comision in comision_agentie %}
-                        <div class="a5Class">
-                            <input required type="radio" value={{ comision.valoare }}
-                                   name="comision"/>
-                            <label>{{ comision.descriere }}</label>
+                    <div class="a5Class">
+                        Doriți VERIFICAREA terenului de către un geolog?:
+                        <br>
+                        <div>
+                            {% for verificare in verificare_geologica %}
+                                <div class="a7Class">
+                                    <input required type="radio" value={{ verificare.valoare }}
+                                           name="verificare_geologica"/>
+                                    <label>{{ verificare.descriere }}</label>
+                                </div>
+                            {% endfor %}
                         </div>
-                    {% endfor %}
+
+                        <div class="a6Class">
+                            Înainte de a cumpără terenul, apelați la serviciile unui geolog pentru intocmirea unui AVIZ
+                            GEOTEHNIC.
+                            Este o cheltuiala care merită făcută, pentru a știi în mare, în ce condiţii se poate construi pe
+                            terenul
+                            respectiv.
+                        </div>
+                        <br>
+                    </div>
+
+                    <br>
+
+                    <div class="a5Class">
+                        COMISION agenție imobiliară pentru cumpărarea terenului:
+                        <br>
+                        <div>
+                            {% for comision in comision_agentie %}
+                                <div class="a7Class">
+                                    <input required type="radio" value={{ comision.valoare }}
+                                           name="comision"/>
+                                    <label>{{ comision.descriere }}</label>
+                                </div>
+                            {% endfor %}
+                            <br>
+                        </div>
+                    </div>
+
+                <button type="submit" class="button" > AFIȘEAZĂ COSTURI >> </button>
+                <br>
                 </div>
             </div>
-
-        </div>
-        <button type="submit">Calculeaza</button>
-
     </form>
 
 
