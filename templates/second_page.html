@@ -11,12 +11,12 @@
 {#    Parcurgem toate costurile primite din functia second_page(), afisandu-le #}
     {% for valoare in valori %}
         <div class="a5Class">
-            <b class="a4Class">{{ valoare.descriere }}</b>: {{ valoare.valoare }} €
+            <b class="a4Class">{{ valoare.descriere }}</b>: {{ "%.2f"|format(valoare.valoare) }} €
             <br><br>
         </div>
     {% endfor %}
     </div>
-    <a href='first_page.html'> <input type= button  class="button" value="<< INAPOI"> </a>
+    <a href='/'> <input type= button  class="button" value="<< INAPOI"> </a>
 
     <div>
 {% endblock content %}

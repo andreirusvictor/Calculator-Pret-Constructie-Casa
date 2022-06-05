@@ -11,7 +11,7 @@
             <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
     </head>
 
-<body  style="background-image: url('static/images/h2.jpg'); background-repeat: no-repeat; background-size: cover;">
+<body  style="background-image: url({{  url_for('static', filename='images/h2.jpg') }}); background-repeat: no-repeat; background-size: cover;">
     <div>
 
         <div  class="a1Class" align="center">
