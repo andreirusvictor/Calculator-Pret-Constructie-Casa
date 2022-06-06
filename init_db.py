@@ -60,9 +60,9 @@ cursor.execute(
         (4, 'Lux', 285);
     
     INSERT INTO nivel_arhitectura VALUES
-        (1, 'Arhitectura simpla', 230),
-        (2, 'Arhitectura de complexitate media', 260),
-        (3, 'Arhitectura complexa', 290);
+        (1, 'Arhitectura simpla', 23),
+        (2, 'Arhitectura de complexitate media', 26),
+        (3, 'Arhitectura complexa', 29);
         
     INSERT INTO verificare_topografica VALUES 
         (1, 'Da', 200),
