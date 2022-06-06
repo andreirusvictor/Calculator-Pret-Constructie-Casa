@@ -5,8 +5,8 @@ app = Flask('calculator')
 
 
 # Ia din baza de date toate intrarile din tabela pentru tabela specificata
-# fetchall returneaza o lista de intrari, de exemplu pentru tabela (ID, DESCRIERE, VALOARE)
-# returneaza ('Arhitectura simpla', 20), asa ca le convertim la un dictionar
+# fetchall returneaza o lista de intrari, de exemplu pentru tabela (DESCRIERE, VALOARE)
+# returneaza ('Arhitectura simpla', 23), asa ca le convertim la un dictionar
 # pentru a intelege ce inseamna fiecare valoare
 
 
