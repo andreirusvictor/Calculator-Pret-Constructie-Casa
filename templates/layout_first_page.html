@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+            {% if title %}
+                <title> {{ title }}</title>
+            {% else %}
+                <title>Detaliere costuri</title>
+            {% endif %}
+            <link type="image/png" sizes="32x32" rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+            <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+    </head>
+
+<body  style="background-image: url({{  url_for('static', filename='images/h10.jpg') }}); background-repeat: no-repeat; background-size: cover;">
+    <div>
+
+        <div  class="a1Class" align="center">
+            Calculator preț construcție casă
+
+        </div>
+
+    </div>
+ {% block content %} {% endblock %}
+</body>
