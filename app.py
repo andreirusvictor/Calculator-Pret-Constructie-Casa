@@ -4,12 +4,6 @@ import psycopg2
 app = Flask('calculator')
 
 
-# Ia din baza de date toate intrarile din tabela pentru tabela specificata
-# fetchall returneaza o lista de intrari, de exemplu pentru tabela (DESCRIERE, VALOARE)
-# returneaza ('Arhitectura simpla', 23), asa ca le convertim la un dictionar
-# pentru a intelege ce inseamna fiecare valoare
-
-
 def select(cursor, tabela):
     cursor.execute(f'SELECT * FROM {tabela};')
     rows = cursor.fetchall()
@@ -23,7 +17,6 @@ def select(cursor, tabela):
     return rezultat
 
 
-# aducem valorile completate in campurile formularului si le pasam variabilelor definite pentru efectuarea calculelor:
 def costuri():
     st = int(request.form.get('suprafata_teren'))
     tmp = int(request.form.get('pret_teren'))
@@ -60,30 +53,30 @@ def costuri():
 
     cost_notar = cost_tr / 100
 
-    cost_total = cost_tr + pr_arh + casa_cheie + cu_avz + st_geo + topo + ac + ut_curent + ut_gaz + val_ag +\
+    cost_total = cost_tr + pr_arh + casa_cheie + cu_avz + st_geo + topo + ac + ut_curent + ut_gaz + val_ag + \
                  ut_ac + st_topo + cost_notar + geo
 
     return [
 
-        {'descriere':'Cost teren', 'valoare':cost_tr},
-        {'descriere':'Cost proiect arhitectură ', 'valoare':pr_arh},
-        {'descriere':'Cost construire casă la roșu ', 'valoare':casa_rosu},
-        {'descriere':'Cost construire casă la cheie ', 'valoare':casa_cheie},
-        {'descriere':'Cost certificat urbanism + avize', 'valoare':cu_avz},
-        {'descriere':'Cost studiu geotehnic', 'valoare':st_geo},
-        {'descriere':'Cost ridicare topografică', 'valoare':topo},
-        {'descriere':'Cost autorizație de construcție', 'valoare':ac},
-        {'descriere':'Cost utilități curent', 'valoare':ut_curent},
-        {'descriere':'Cost utilități gaz', 'valoare':ut_gaz},
-        {'descriere':'Cost utilități apă/canal', 'valoare':ut_ac},
-        {'descriere':'Cost instalații electrice', 'valoare':cost_ie},
-        {'descriere':'Cost instalații sanitare', 'valoare':cost_is},
-        {'descriere':'Cost instalații termice', 'valoare':cost_it},
-        {'descriere':'Valoare comision agenție', 'valoare':val_ag},
-        {'descriere':'Cost topograf verificare teren', 'valoare':st_topo},
-        {'descriere':'Costuri notariale cumpărare teren', 'valoare':cost_notar},
-        {'descriere':'Cost aviz geotehnic preliminar', 'valoare':geo},
-        {'descriere':'COST TOTAL', 'valoare':cost_total},
+        {'descriere': 'Cost teren', 'valoare': cost_tr},
+        {'descriere': 'Cost proiect arhitectură ', 'valoare': pr_arh},
+        {'descriere': 'Cost construire casă la roșu ', 'valoare': casa_rosu},
+        {'descriere': 'Cost construire casă la cheie ', 'valoare': casa_cheie},
+        {'descriere': 'Cost certificat urbanism + avize', 'valoare': cu_avz},
+        {'descriere': 'Cost studiu geotehnic', 'valoare': st_geo},
+        {'descriere': 'Cost ridicare topografică', 'valoare': topo},
+        {'descriere': 'Cost autorizație de construcție', 'valoare': ac},
+        {'descriere': 'Cost utilități curent', 'valoare': ut_curent},
+        {'descriere': 'Cost utilități gaz', 'valoare': ut_gaz},
+        {'descriere': 'Cost utilități apă/canal', 'valoare': ut_ac},
+        {'descriere': 'Cost instalații electrice', 'valoare': cost_ie},
+        {'descriere': 'Cost instalații sanitare', 'valoare': cost_is},
+        {'descriere': 'Cost instalații termice', 'valoare': cost_it},
+        {'descriere': 'Valoare comision agenție', 'valoare': val_ag},
+        {'descriere': 'Cost topograf verificare teren', 'valoare': st_topo},
+        {'descriere': 'Costuri notariale cumpărare teren', 'valoare': cost_notar},
+        {'descriere': 'Cost aviz geotehnic preliminar', 'valoare': geo},
+        {'descriere': 'COST TOTAL', 'valoare': cost_total},
 
     ]
 
@@ -103,8 +96,6 @@ def first_page():
         'first_page.html',
         title='Formular de calcul',
 
-        # Trimitem variabilele necesare randarii template-ului, selectand toate datele
-        # necesare calculului, din toate tabelele existente
         regimuri_inaltime=select(cursor, 'regim_inaltime'),
         niveluri_finisare=select(cursor, 'nivel_finisare'),
         niveluri_arhitectura=select(cursor, 'nivel_arhitectura'),
@@ -116,9 +107,6 @@ def first_page():
 
 @app.route('/second_page/', methods=('POST',))
 def second_page():
-    # Functia costuri returneaza o lista cu toate costurile necesare construirii casei,
-    # in forma (descriere="Tipul costului", valoare="Valoarea costului". Trimitem aceasta lista
-    # template-ului, pentru a le afisa.
     return render_template(
         'second_page.html',
         valori=costuri()
